@@ -1,0 +1,8 @@
+KnowScape 课件规范 v1（UTF-8；根为 JSON 对象；上限 24 KiB）
+必需字段 schemaVersion:1，kind:"gears"|"circuits"|"capacitor"，title:1–60 字，difficulty:1|2|3，goal，solution，hints:[三条不同提示，各1–180字]，explanation:1–500 字。
+文本为纯文本，不含尖括号或控制符。不接受未知字段。不得嵌入脚本、公式求值代码、外部链接资源。内置模型决定单位与公式。
+gears: goal={rpm:正的绝对转速,direction:1|-1}; solution={type:"compound",z1,z2,z3,z4,input,dir,module}。z 18–60 整数，输入 10–120 整数 rpm，模数1–4整数 mm，dir±1。两级外啮合 n_out=n_in*z1/z2*z3/z4，输出方向等于输入方向。目标与模型容差小于 1e-6 rpm；非整比目标保留足够精度。
+circuits: goal={digit:0–9 整数,polarity:"CC"|"CA"},solution={byte:0–255整数}。物理驱动字 bit7…0=dp,g,f,e,d,c,b,a；CC高有效，CA低有效；目标小数点灭。
+capacitor: goal={pf:目标pF,tolerance:绝对容差pF}，solution={area:cm²,gap:mm,er:相对介电常数}；面积1–16 步进0.25，极距0.5–4 步进0.05，介电常数1–8步进0.1。容差最小0.001 pF，不大于 min(1 pF, 目标的10%)；参考点须在容差内。导入题针对单端电容量，差动归一化输出可在自由模式研究。
+工作流：下载样例 → 改写目标、参考解、提示和解释 → 导入工坊 → 查阅重算结果 → 带入实验台 → 实际操作验收。无需 API。机器检查格式、数值和答案，不判定教学文字的科学表述；教师复核后再上课。
+扩展能力：导入的是现有实验的新任务；新增物理引擎需开发模块并注册，不允许 JSON 执行任意代码。
