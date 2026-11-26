@@ -4,3 +4,4 @@ Three.js r180 (0.180.0), three.js authors，MIT。复用渲染核心、OrbitCont
 RoomEnvironment 的官方说明指出其源自 Google model-viewer 的 EnvironmentScene 设计；附 MODEL-VIEWER-LICENSE.txt (Apache-2.0)。未嵌入 model-viewer 应用。
 原创建模、实验逻辑、教学内容、工坊、图形与图形标识由本项目制作。未嵌入 PhET、CircuitJS、Bartosz、Desmos、GeoGebra 的代码、图片、文字或界面。
 参考来源、适用范围和开发工具另见源工程 RESEARCH.md / LICENSES.md。未对项目原创部分授予单独开源许可证。
+V2 新增 CAD 关联尺寸、数字探针与改线、极板操作及工程工作区，仍采用本地同一 Three.js r180 / OrbitControls / RoomEnvironment。未分发 SOLIDWORKS、Autodesk Fusion、COMSOL、PhET Joist、CircuitJS1 或 Desmos 的专有素材、仿真程序或运行库。
